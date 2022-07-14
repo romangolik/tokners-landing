@@ -1,0 +1,68 @@
+@import "../abstract/mixins/alignment.mixins";
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 110;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 120;
+
+  width: 100%;
+  height: 100vh;
+  max-width: 320px;
+  padding: 40px 20px;
+
+  box-sizing: border-box;
+  background-color: var(--dark-blue);
+
+  transition: 0.4s ease;
+
+  &__head {
+    @include flexAlignment(center, space-between);
+    margin-bottom: 40px;
+  }
+
+  &__logo {
+    display: block;
+    width: 187px;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__navigation {
+    margin-bottom: 40px;
+  }
+
+  &__navigation-item {
+    display: block;
+    padding: 15px;
+
+    text-align: center;
+  }
+
+  &__buttons {
+    @include flexAlignment(center, center);
+  }
+
+  &__button:first-of-type {
+    margin-right: 20px;
+  }
+
+  &_show {
+    transform: translateX(-100%);
+  }
+}

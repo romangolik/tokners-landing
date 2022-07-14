@@ -1,0 +1,37 @@
+.button {
+  padding: 0;
+
+  font-weight: 700;
+
+  border: none;
+  outline: none;
+  color: var(--white);
+  box-sizing: border-box;
+  background-color: transparent;
+
+  transition: 0.2s ease;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &_stroke, &_fill {
+    padding: 15px 30px;
+
+    border-radius: 52px;
+  }
+
+  &_stroke {
+    border: 2px solid var(--green);
+
+    &:hover {
+      background-color: var(--green);
+      box-shadow: 0 15px 25px rgba(34, 167, 93, 0.25);
+    }
+  }
+
+  &_fill {
+    background-color: var(--green);
+    box-shadow: 0 15px 25px rgba(34, 167, 93, 0.25);
+  }
+}

@@ -1,0 +1,57 @@
+.counter {
+  --counter-color: white;
+
+  position: relative;
+
+  height: 82px;
+  width: 82px;
+
+  color: inherit;
+
+  svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    color: var(--counter-color);
+  }
+
+  &__text {
+    position: absolute;
+    top: 25px;
+    left: 13px;
+
+    width: 51px;
+
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.38;
+
+    text-align: center;
+    color: var(--dark-blue);
+  }
+
+  &_green {
+    --counter-color: var(--green);
+
+    filter: drop-shadow(0 15px 10px rgba(34, 167, 93, 0.3));
+  }
+
+  &_blue {
+    --counter-color: var(--blue);
+
+    filter: drop-shadow(0 15px 10px rgba(34, 120, 212, 0.3));
+  }
+
+  &_yellow {
+    --counter-color: var(--yellow);
+
+    filter: drop-shadow(0 15px 10px rgba(255, 209, 0, .3));
+  }
+
+  &_red {
+    --counter-color: var(--red);
+
+    filter: drop-shadow(0 15px 10px rgba(226, 6, 19, 0.3));
+  }
+}

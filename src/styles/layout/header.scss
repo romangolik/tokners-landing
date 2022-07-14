@@ -1,0 +1,66 @@
+@import "../abstract/mixins/alignment.mixins";
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+  padding-top: 40px;
+
+  box-sizing: border-box;
+
+  &__container, &__content {
+    @include flexAlignment(center, space-between);
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__logo {
+    display: block;
+    width: 100%;
+    max-width: 187px;
+    margin-bottom: 8px;
+    margin-right: 80px;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__navigation-item {
+    padding: 15px;
+  }
+
+  &__buttons {
+    @include flexAlignment(center);
+  }
+
+  &__sign-in-button {
+    margin-right: 30px;
+  }
+
+  &__sign-up-button {
+    width: 150px;
+  }
+
+  &__burger {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .header {
+    &__content {
+      display: none;
+    }
+
+    &__burger {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,184 @@
+@import "../abstract/mixins/alignment.mixins";
+
+.footer {
+  position: relative;
+  padding-bottom: 150px;
+
+  &__gradient {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    width: 77%;
+  }
+
+  &__navigation {
+    width: max-content;
+    margin: 0 auto 120px;
+  }
+
+  &__navigation-item {
+    padding: 10px 72px;
+  }
+
+  &__separator {
+    opacity: 0.16;
+    color: var(--white);
+  }
+
+  &__content {
+    @include flexAlignment(center, space-between);
+  }
+
+  &__logo {
+    display: inline-block;
+    width: 100%;
+    max-width: 207px;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__socials {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: repeat(6, 60px);
+  }
+
+  &__copyright {
+    font-weight: 700;
+
+    color: var(--white);
+  }
+}
+
+.social {
+  position: relative;
+
+  display: inline-flex;
+  height: 50px;
+  width: 50px;
+
+  overflow: hidden;
+  color: var(--white);
+  border-radius: 50%;
+
+  &__icon {
+    display: block;
+    height: 20px;
+    width: 20px;
+    margin: auto;
+
+    color: inherit;
+  }
+
+  &__border {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    opacity: 0.05;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid var(--white);
+  }
+
+  &:hover {
+    .social__border {
+      border: none;
+    }
+  }
+
+  &_twitter:hover {
+    background-color: #1da1f2;
+  }
+
+  &_telegram:hover {
+    background-color: #27a0de;
+  }
+
+  &_instagram:hover {
+    background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  }
+
+  &_medium:hover {
+    color: var(--black);
+    background-color: white;
+  }
+
+  &_github:hover {
+    color: #1b1f23;
+    background-color: white;
+  }
+
+  &_reddit:hover {
+    background-color: #ff4500;
+  }
+}
+
+@media screen and (max-width: 1535px) {
+  .footer {
+    padding-bottom: 110px;
+
+    &__navigation {
+      margin-bottom: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .footer {
+    padding-bottom: 90px;
+
+    &__gradient {
+      display: none;
+    }
+
+    &__navigation {
+      margin-bottom: 80px;
+    }
+
+    &__navigation-item {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    &__content {
+      flex-direction: column;
+    }
+
+    &__logo, &__socials {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 853px) {
+  .footer__navigation {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 541px) {
+  .footer {
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .footer__socials {
+    grid-column-gap: 8px;
+    grid-template-columns: repeat(6, 40px);
+  }
+
+  .social {
+    height: 40px;
+    width: 40px;
+  }
+}
